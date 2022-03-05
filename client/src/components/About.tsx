@@ -1,6 +1,8 @@
 import { Section } from "./Section";
 // @ts-ignore
 import Avatar from "../img/avatar.jpg";
+import { Socials } from "./Socials";
+import { SiteMap } from "./Sitemap";
 
 export function About() {
   return (
@@ -20,26 +22,11 @@ export function About() {
           alt="Profile image"
         />
       </div>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <a href="#open-source">Open Source</a>
-            </li>
-            <li>
-              <a href="#tweets">Tweets</a>
-            </li>
-            <li>
-              <a href="#blog">Blog</a>
-            </li>
-          </ul>
-        </nav>
+      <div className="flex justify-center align-center">
+        <Socials></Socials>
+      </div>
+      <div className="mt-5 sm:mt-0">
+        <SiteMap></SiteMap>
       </div>
     </Section>
   );

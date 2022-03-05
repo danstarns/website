@@ -1,7 +1,28 @@
+import React from "react";
+import { SiteMap } from "./Sitemap";
+// @ts-ignore
+import Sig from "../img/sig.svg";
+
 export function Footer() {
   return (
-    <footer className="w-full bg-white p-5 flex justify-start">
-      <h3>Footer</h3>
+    <footer className="w-full bg-white p-5">
+      <article className="prose lg:prose-xl mx-auto">
+        <div className="flex flex-row align-center justify-center">
+          <div className="mt-5">
+            <SiteMap></SiteMap>
+          </div>
+          <img src={Sig} alt="d.s" className="h-8 sm:h-12 mt-20 ml-10" />
+        </div>
+        <div className="mt-10 flex-column sm:flex justify-between align-center">
+          <p className="font-bold text-center m-1">
+            <span dangerouslySetInnerHTML={{ __html: "&copy;" }} /> MIT License
+          </p>
+          <p className="font-bold text-center m-1">me@danielstarns.com</p>
+          <p className="font-bold  text-center m-1">
+            <a href="https://github.com/danstarns/website">Source Code</a>
+          </p>
+        </div>
+      </article>
     </footer>
   );
 }
