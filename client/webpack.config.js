@@ -19,6 +19,17 @@ module.exports = {
         exclude: "/node_modules/",
       },
       {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
         exclude: /\.module\.css$/,
