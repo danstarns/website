@@ -72,9 +72,8 @@ export function Contact() {
               textArea={true}
             ></FormInput>
           </div>
-
           <button
-            className="mt-6 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="mt-6 bg-black hover:bg-lightgrey text-white hover:text-black hover:border hover:border-black font-bold py-2 px-4 rounded  focus:bg-lightgrey focus:text-black "
             type="submit"
             disabled={isSubmitted}
           >

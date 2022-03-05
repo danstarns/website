@@ -15,7 +15,9 @@ export const className =
 export const FormInput = (props: Props) => {
   return (
     <div>
-      <label className="block font-bold mb-2">{props.label}:</label>
+      <label htmlFor={props.id} className="block font-bold mb-2">
+        {props.label}:
+      </label>
       {props.textArea ? (
         <textarea
           className={`${className}`}
