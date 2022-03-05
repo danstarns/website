@@ -7,11 +7,11 @@ export function Footer() {
   return (
     <footer className="w-full bg-white p-5">
       <article className="prose lg:prose-xl mx-auto">
-        <div className="flex flex-row align-center justify-center">
+        <div className="flex flex-row align-center justify-between">
           <div className="mt-5">
             <SiteMap></SiteMap>
           </div>
-          <img src={Sig} alt="d.s" className="h-8 sm:h-12 mt-20 ml-10" />
+          <img src={Sig} alt="d.s" className="h-8 sm:h-12 ml-10" />
         </div>
         <div className="mt-10 flex-column sm:flex justify-between align-center">
           <p className="font-bold text-center m-1">
