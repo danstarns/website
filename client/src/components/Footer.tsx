@@ -17,8 +17,10 @@ export function Footer() {
           <p className="font-bold text-center m-1">
             <span dangerouslySetInnerHTML={{ __html: "&copy;" }} /> MIT License
           </p>
-          <p className="font-bold text-center m-1">me@danielstarns.com</p>
-          <p className="font-bold  text-center m-1">
+          <p className="font-bold text-center m-1">
+            <a href="mailto:me@danielstarns.com">me@danielstarns.com</a>
+          </p>
+          <p className="font-bold text-center m-1">
             <a href="https://github.com/danstarns/website">Source Code</a>
           </p>
         </div>
