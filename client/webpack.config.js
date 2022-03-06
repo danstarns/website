@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV !== "production";
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "none",
@@ -44,12 +45,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
+    new Dotenv({
+      silent: true,
+    }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(
         isDevelopment ? "development" : "production"
       ),
-      "process.env.API_URL":
-        process.env.API_URL || JSON.stringify("http://localhost:5000"),
     }),
   ],
   devServer: {

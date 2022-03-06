@@ -6,7 +6,30 @@ import {
   faGithub,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faBookmark,
+  faStar,
+  faCodeBranch,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faTwitterSquare, faLinkedin, faGithub, faMedium);
+library.add(
+  fab,
+  faTwitterSquare,
+  faLinkedin,
+  faGithub,
+  faMedium,
+  faBookmark,
+  faStar,
+  faCodeBranch
+);
 
-export { fab, faTwitterSquare, faLinkedin, faGithub, faMedium };
+export {
+  fab,
+  faTwitterSquare,
+  faLinkedin,
+  faGithub,
+  faMedium,
+  faBookmark,
+  faStar,
+  faCodeBranch,
+};
