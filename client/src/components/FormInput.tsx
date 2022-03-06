@@ -16,7 +16,6 @@ export const className = `
     border 
     rounded 
     w-full 
-    sm:w-96
     py-5
     px-5 
     sm:px-10 

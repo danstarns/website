@@ -38,7 +38,7 @@ export function Contact() {
           <a href="mailto:me@danielstarns.com">me@danielstarns.com</a>
         </li>
       </ul>
-      <div className="flex flex-column justify-center align-center">
+      <div className="container mx-auto px-4">
         {error && <p>Something went wrong! Try emailing direct.</p>}
         {!error && (
           <form onSubmit={onSubmit}>
