@@ -9,13 +9,34 @@ export interface Props {
   textArea?: boolean;
 }
 
-export const className =
-  "form-control sm:w-3/6 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline";
+export const className = `
+    form-control 
+    shadow 
+    appearance-none 
+    border 
+    rounded 
+    w-full 
+    sm:w-96
+    py-5
+    px-5 
+    sm:px-10 
+    text-gray-700 
+    leading-tight 
+    focus:outline-none 
+    focus:shadow-outline
+  `;
 
 export const FormInput = (props: Props) => {
   return (
     <div>
-      <label htmlFor={props.id} className="block font-bold mb-2">
+      <label
+        htmlFor={props.id}
+        className="
+          block 
+          font-bold 
+          mb-2
+        "
+      >
         {props.label}:
       </label>
       {props.textArea ? (
@@ -27,6 +48,7 @@ export const FormInput = (props: Props) => {
           required={true}
           defaultValue={props.defaultValue}
           disabled={props.disabled}
+          style={{ height: "150px" }}
         ></textarea>
       ) : (
         <input

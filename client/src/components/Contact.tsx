@@ -38,49 +38,65 @@ export function Contact() {
           <a href="mailto:me@danielstarns.com">me@danielstarns.com</a>
         </li>
       </ul>
-      {error && <p>Something went wrong! Try emailing direct.</p>}
-      {!error && (
-        <form onSubmit={onSubmit}>
-          <div className="mt-5">
-            <FormInput
-              id="to"
-              label="To"
-              placeholder="me@danielstarns.com"
-              disabled={true}
-              required={false}
-              type="email"
-            ></FormInput>
-          </div>
-          <div className="mt-5">
-            <FormInput
-              id="from"
-              label="From"
-              placeholder="my-email@email.com"
+      <div className="flex flex-column justify-center align-center">
+        {error && <p>Something went wrong! Try emailing direct.</p>}
+        {!error && (
+          <form onSubmit={onSubmit}>
+            <div className="mt-5">
+              <FormInput
+                id="to"
+                label="To"
+                placeholder="me@danielstarns.com"
+                disabled={true}
+                required={false}
+                type="email"
+              ></FormInput>
+            </div>
+            <div className="mt-5">
+              <FormInput
+                id="from"
+                label="From"
+                placeholder="my-email@email.com"
+                disabled={isSubmitted}
+                required={true}
+                type="email"
+              ></FormInput>
+            </div>
+            <div className="mt-5">
+              <FormInput
+                id="message"
+                label="Your Message"
+                placeholder="Hey Dan, Let's chat ?"
+                disabled={isSubmitted}
+                required={false}
+                type="text"
+                textArea={true}
+              ></FormInput>
+            </div>
+            <button
+              className="
+                mt-6 
+                bg-black 
+                hover:bg-lightgrey 
+                text-white 
+                hover:text-black 
+                border
+                border-white 
+                hover:border-black 
+                font-bold 
+                py-2 
+                px-4 
+                rounded 
+                focus:bg-lightgrey 
+                focus:text-black"
+              type="submit"
               disabled={isSubmitted}
-              required={true}
-              type="email"
-            ></FormInput>
-          </div>
-          <div className="mt-5">
-            <FormInput
-              id="message"
-              label="Your Message"
-              placeholder="Your Message"
-              disabled={isSubmitted}
-              required={false}
-              type="text"
-              textArea={true}
-            ></FormInput>
-          </div>
-          <button
-            className="mt-6 bg-black hover:bg-lightgrey text-white hover:text-black hover:border hover:border-black font-bold py-2 px-4 rounded  focus:bg-lightgrey focus:text-black "
-            type="submit"
-            disabled={isSubmitted}
-          >
-            {isSubmitted ? "Sent!" : "Send"}
-          </button>
-        </form>
-      )}
+            >
+              {isSubmitted ? "Sent!" : "Send"}
+            </button>
+          </form>
+        )}
+      </div>
     </Section>
   );
 }
