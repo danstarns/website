@@ -12,10 +12,10 @@ export function SiteMap() {
           <a href="#open-source">Open Source</a>
         </li>
         <li>
-          <a href="#tweets">Tweets</a>
+          <a href="#blog">Blog</a>
         </li>
         <li>
-          <a href="#blog">Blog</a>
+          <a href="#tweets">Tweets</a>
         </li>
       </ul>
     </nav>

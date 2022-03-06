@@ -1,4 +1,4 @@
-import { Blog } from "./components/Blog";
+import { Blogs } from "./components/Blogs";
 import { Header } from "./components/Header";
 import { About } from "./components/About";
 import { OpenSource } from "./components/OpenSource";
@@ -16,8 +16,8 @@ const App = () => {
             <About></About>
             <Contact></Contact>
             <OpenSource></OpenSource>
+            <Blogs></Blogs>
             <Tweets></Tweets>
-            <Blog></Blog>
           </div>
         </div>
       </div>
