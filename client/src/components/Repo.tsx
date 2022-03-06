@@ -13,6 +13,7 @@ export interface Props {
 export function Repo(props: Props) {
   return (
     <div
+      key={props.name}
       className="
         text-xs
         sm:text-sm 

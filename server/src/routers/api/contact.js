@@ -8,7 +8,7 @@ async function contact(req, res) {
         {
           to: req.body.email,
           from: config.EMAIL_SENDER_ADDRESS,
-          subject: "danielstarns.com",
+          subject: "Website Contact danielstarns.com",
           text: req.body.message,
           cc: [config.EMAIL_SENDER_ADDRESS, config.EMAIL_CC],
         },

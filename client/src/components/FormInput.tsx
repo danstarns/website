@@ -16,10 +16,8 @@ export const className = `
     border 
     rounded 
     w-full 
-    py-5
-    px-5 
-    sm:px-10 
-    text-gray-700 
+    py-3
+    px-3 
     leading-tight 
     focus:outline-none 
     focus:shadow-outline

@@ -31,6 +31,7 @@ export function OpenSource() {
       <div className="grid gap-4 grid-cols-2">
         {repos.map((repo) => (
           <Repo.Repo
+            key={repo.name}
             name={repo.name}
             description={repo.description}
             primaryLanguage={repo.primaryLanguage}

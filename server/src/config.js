@@ -10,4 +10,5 @@ module.exports = {
   CLIENTS_PATH: process.env.CLIENTS_PATH,
   DOMAIN: process.env.DOMAIN,
   GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
+  TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN,
 };
