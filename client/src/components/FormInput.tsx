@@ -9,7 +9,7 @@ export interface Props {
   textArea?: boolean;
 }
 
-export const className = `
+const className = `
     form-control 
     shadow 
     appearance-none 

@@ -37,7 +37,6 @@ export function Repo(props: Props) {
         </p>
         <p>{props.description}</p>
       </div>
-
       <div className="flex-col sm:flex-row sm:flex sm:justify-start inset-x-0 bottom-0">
         <p className="flex flex-row">
           <span

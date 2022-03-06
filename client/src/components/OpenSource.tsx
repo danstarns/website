@@ -41,7 +41,6 @@ export function OpenSource() {
           ></Repo.Repo>
         ))}
       </div>
-
       <h3>Contributions</h3>
       <div className="pt-5">
         <GitHubCalendar username="danstarns" />

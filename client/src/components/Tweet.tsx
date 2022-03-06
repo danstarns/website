@@ -32,9 +32,7 @@ export const Tweet = (props: Props) => {
       <div className="flex">
         <a href={authorUrl}>@{author.username}</a>
       </div>
-
       <p>{formattedText}</p>
-
       {media && media.length
         ? media.map((m) => (
             <img
