@@ -5,6 +5,7 @@ interface IBlog {
   link: string;
   title: string;
 }
+
 export function Blogs() {
   const [blogs, setBlogs] = useState<IBlog[]>([]);
 

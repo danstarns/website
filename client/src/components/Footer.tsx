@@ -1,4 +1,3 @@
-import React from "react";
 import { SiteMap } from "./Sitemap";
 // @ts-ignore
 import Sig from "../img/sig.svg";
