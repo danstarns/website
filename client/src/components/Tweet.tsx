@@ -77,7 +77,7 @@ export const Tweet = (props: Props) => {
           ))
         : null}
       {quoteTweet ? (
-        <div className="mb-6 mt-3">
+        <div className="my-6">
           {/* @ts-ignore */}
           <Tweet tweet={{ ...quoteTweet, ...(media ? { media } : {}) }} />
         </div>
