@@ -47,7 +47,7 @@ module.exports = {
       patterns: ["public"],
     }),
     new HtmlWebpackPlugin({
-      favicon: "./public/sig.svg",
+      favicon: "./public/favicon.svg",
       template: path.join(__dirname, "src", "index.html"),
     }),
     new Dotenv({
