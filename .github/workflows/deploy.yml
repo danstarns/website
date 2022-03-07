@@ -20,6 +20,7 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd website
+            git reset --hard
             git pull origin main
             cd client
             npm install
