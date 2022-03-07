@@ -5,6 +5,7 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const TerserPlugin = require("terser-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   mode: "none",
@@ -63,6 +64,7 @@ module.exports = {
         isDevelopment ? "development" : "production"
       ),
     }),
+    new CompressionPlugin(),
   ],
   devServer: {
     static: {
