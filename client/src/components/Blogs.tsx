@@ -36,7 +36,7 @@ export function Blogs() {
       <div>
         <ul>
           {blogs.map((b) => (
-            <li>
+            <li key={b.title}>
               <a href={b.link}>{b.title}</a>
             </li>
           ))}

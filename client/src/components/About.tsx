@@ -1,6 +1,6 @@
 import { Section } from "./Section";
 // @ts-ignore
-import Avatar from "../img/avatar.jpg";
+import Avatar from "../../public/avatar.jpg";
 import { Socials } from "./Socials";
 import { SiteMap } from "./Sitemap";
 

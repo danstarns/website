@@ -34,6 +34,7 @@
     "@types/styled-components": "^5",
     "@types/webpack": "5.28.0",
     "autoprefixer": "^10.4.2",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "dotenv": "^16.0.0",
     "dotenv-webpack": "^7.1.0",

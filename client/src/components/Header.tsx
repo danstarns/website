@@ -1,5 +1,5 @@
 // @ts-ignore
-import Sig from "../img/sig.svg";
+import Sig from "../../public/sig.svg";
 
 export function Header() {
   return (
