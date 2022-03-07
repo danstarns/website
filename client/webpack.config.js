@@ -43,6 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./img/sig.svg",
       template: path.join(__dirname, "src", "index.html"),
     }),
     new Dotenv({
