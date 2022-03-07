@@ -3,7 +3,7 @@ const {
   EMAIL_SENDER_ADDRESS,
   EMAIL_SENDER_PASSWORD,
   EMAIL_HOST,
-} = require("./config");
+} = require("../config");
 
 const transporter = nodemailer.createTransport({
   host: EMAIL_HOST,

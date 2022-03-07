@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   HTTP_PORT: process.env.HTTP_PORT || 4000,
-  STATIC_FOLDER: process.env.STATIC_FOLDER || "../../client/dist",
+  STATIC_FOLDER: process.env.STATIC_FOLDER || "../client/dist",
   EMAIL_CC: process.env.EMAIL_CC || "danielstarns@hotmail.com",
   EMAIL_SENDER_ADDRESS:
     process.env.EMAIL_SENDER_ADDRESS || "me@danielstarns.com",

@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { HTTP_PORT, STATIC_FOLDER } = require("./config");
+const { HTTP_PORT, STATIC_FOLDER } = require("../config");
 const api = require("./routers/api");
 
 const app = express();
@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.static(STATIC_FOLDER));
 app.use("/api", api);
 app.get("*", express.static(STATIC_FOLDER));
+app.use("*", express.static(STATIC_FOLDER));
 
 async function listen() {
   await app.listen(HTTP_PORT);
