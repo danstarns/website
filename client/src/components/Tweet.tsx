@@ -5,8 +5,27 @@ export interface Props {
   tweet: ITweet;
 }
 
+const RetweetIcon = () => {
+  return (
+    <svg className="mr-3" width="24" height="24" viewBox="0 0 24 24">
+      <path
+        className="fill-current"
+        d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"
+      />
+    </svg>
+  );
+};
+
 export const Tweet = (props: Props) => {
-  const { id, author, created_at, text, media, public_metrics } = props.tweet;
+  const {
+    id,
+    author,
+    created_at,
+    text,
+    media,
+    public_metrics,
+    referenced_tweets,
+  } = props.tweet;
   const authorUrl = `https://twitter.com/${author.username}`;
   const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
   const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`;
@@ -14,6 +33,8 @@ export const Tweet = (props: Props) => {
   const tweetUrl = `https://twitter.com/${author.username}/status/${id}`;
   const createdAt = new Date(created_at);
   const formattedText = text.replace(/https:\/\/[\n\S]+/g, "");
+  const quoteTweet =
+    referenced_tweets && referenced_tweets.find((t) => t.type === "retweeted");
 
   return (
     <div
@@ -29,11 +50,21 @@ export const Tweet = (props: Props) => {
         leading-tight 
         "
     >
-      <div className="flex">
-        <a href={authorUrl}>@{author.username}</a>
+      <div className="flex items-center">
+        <a href={authorUrl}>
+          <img
+            alt={author.username}
+            src={author.profile_image_url}
+            className="inline object-cover w-8 h-8 rounded-full"
+            style={{ margin: 0 }}
+          />
+        </a>
+        <a href={authorUrl} className="flex flex-col ml-3">
+          @{author.username}
+        </a>
       </div>
-      <p>{formattedText}</p>
-      {media && media.length
+      {!quoteTweet && <p>{formattedText}</p>}
+      {!quoteTweet && media && media.length
         ? media.map((m) => (
             <img
               key={m.media_key}
@@ -45,6 +76,12 @@ export const Tweet = (props: Props) => {
             />
           ))
         : null}
+      {quoteTweet ? (
+        <div className="mb-6 mt-3">
+          {/* @ts-ignore */}
+          <Tweet tweet={{ ...quoteTweet, ...(media ? { media } : {}) }} />
+        </div>
+      ) : null}
       <a href={tweetUrl}>
         <time
           title={`Time Posted: ${createdAt.toUTCString()}`}
@@ -54,7 +91,7 @@ export const Tweet = (props: Props) => {
         </time>
       </a>
       <div className="flex mt-3 pt-3">
-        <a className="flex items-center mr-4" href={replyUrl}>
+        <a className="flex items-center mr-3" href={replyUrl}>
           <svg className="mr-2" width="24" height="24" viewBox="0 0 24 24">
             <path
               className="fill-current"
@@ -67,13 +104,8 @@ export const Tweet = (props: Props) => {
             })}
           </span>
         </a>
-        <a className="flex items-center mr-4" href={retweetUrl}>
-          <svg className="mr-3" width="24" height="24" viewBox="0 0 24 24">
-            <path
-              className="fill-current"
-              d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"
-            />
-          </svg>
+        <a className="flex items-center mr-3" href={retweetUrl}>
+          <RetweetIcon></RetweetIcon>
           <span>
             {new Number(public_metrics.retweet_count).toLocaleString("en", {
               notation: "compact",
