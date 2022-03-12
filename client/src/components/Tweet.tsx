@@ -41,14 +41,15 @@ export const Tweet = (props: Props) => {
     <div
       key={id}
       className={`
-        p-3
         w-full
+        p-3
         ${!props.nestedTweet && `border shadow rounded leading-tight`} 
         `}
     >
       <div className="flex items-center">
         <a href={authorUrl}>
           <img
+            loading="lazy"
             alt={author.username}
             src={author.profile_image_url}
             className="inline object-cover w-8 h-8 rounded-full"
@@ -63,12 +64,14 @@ export const Tweet = (props: Props) => {
       {!quoteTweet && media && media.length
         ? media.map((m) => (
             <img
+              loading="lazy"
               key={m.media_key}
               alt={text}
               height={m.height}
               width={m.width}
               src={m.url}
               className="rounded"
+              style={{ margin: 0 }}
             />
           ))
         : null}
@@ -82,8 +85,8 @@ export const Tweet = (props: Props) => {
         </div>
       ) : null}
       {!props.nestedTweet && (
-        <>
-          <a href={tweetUrl}>
+        <div className="text-sm mt-3">
+          <a href={tweetUrl} className="italic">
             <time
               title={`Time Posted: ${createdAt.toUTCString()}`}
               dateTime={createdAt.toISOString()}
@@ -127,7 +130,7 @@ export const Tweet = (props: Props) => {
               </span>
             </a>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

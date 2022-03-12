@@ -101,7 +101,13 @@ export function Experience() {
                   p-3
                   "
                 >
-                  {experience.image && <img src={experience.image}></img>}
+                  {experience.image && (
+                    <img
+                      loading="lazy"
+                      alt={`${experience.organization.name} Logo`}
+                      src={experience.image}
+                    ></img>
+                  )}
                 </span>
                 <p className="font-bold">
                   {experience.title} at
