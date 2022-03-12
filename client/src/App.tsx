@@ -5,6 +5,7 @@ import { OpenSource } from "./components/OpenSource";
 import { Tweets } from "./components/Tweets";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { Experience } from "./components/Experience";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Contact></Contact>
             <OpenSource></OpenSource>
             <Blogs></Blogs>
+            <Experience></Experience>
             <Tweets></Tweets>
           </div>
         </div>

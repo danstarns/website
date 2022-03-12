@@ -33,12 +33,7 @@ export function Contact() {
 
   return (
     <Section id="contact" header="Contact">
-      <ul>
-        <li>
-          <a href="mailto:me@danielstarns.com">me@danielstarns.com</a>
-        </li>
-      </ul>
-      <div className="container mx-auto px-4 text-xs sm:text-sm">
+      <div className="container mx-auto text-xs sm:text-sm">
         {error && <p>Something went wrong! Try emailing direct.</p>}
         {!error && (
           <form onSubmit={onSubmit}>

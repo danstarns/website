@@ -15,6 +15,9 @@ export function SiteMap() {
           <a href="#blog">Blog</a>
         </li>
         <li>
+          <a href="#experience">Experience</a>
+        </li>
+        <li>
           <a href="#tweets">Tweets</a>
         </li>
       </ul>
