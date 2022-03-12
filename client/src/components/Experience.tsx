@@ -82,7 +82,7 @@ export function Experience() {
             return (
               <li
                 key={experience.title + experience.organization.name}
-                className="mb-20 ml-5 list-none"
+                className="mb-10 md:mb-20 ml-5 list-none"
               >
                 <span
                   className="
