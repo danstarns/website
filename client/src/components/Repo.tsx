@@ -16,7 +16,7 @@ export function Repo(props: Props) {
       key={props.name}
       className="
         text-xs
-        sm:text-sm 
+        sm:text-base
         w-full 
         border 
         rounded  

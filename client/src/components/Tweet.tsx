@@ -43,8 +43,6 @@ export const Tweet = (props: Props) => {
       className={`
         p-3
         w-full
-        text-xs
-        sm:text-sm 
         ${!props.nestedTweet && `border shadow rounded leading-tight`} 
         `}
     >

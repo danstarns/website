@@ -19,7 +19,7 @@ const experiences = [
     },
     toFrom: "Sep 2020 - Present",
     description: `
-        Building tools that people love.
+      Building & maintaining open-source Typescript GraphQL integrations for Neo4j the database. 
     `,
     image: Neo4jIcon,
   },
@@ -31,7 +31,7 @@ const experiences = [
     },
     toFrom: "Mar 2019 - Present",
     description: `
-        Building tools that people love.
+      Building software solutions.
     `,
     image: RocketConnectIcon,
   },
@@ -43,7 +43,7 @@ const experiences = [
     },
     toFrom: "May 2019 - Sep 2020",
     description: `
-        Building tools that people love.
+      Building an EDM(Electronic Document Management) solution created specifically for UK healthcare.
     `,
     image: IMMJIcon,
   },
@@ -55,7 +55,7 @@ const experiences = [
     },
     toFrom: "Aug 2018 - Mar 2019",
     description: `
-        Building tools that people love.
+      Building analytical PPC(Pay Per Click) dashboards and integrations. 
     `,
     image: BeyondIcon,
   },
@@ -67,7 +67,7 @@ const experiences = [
     },
     toFrom: "Jan 2018 - Jul 2018",
     description: `
-        Building tools that people love.
+      Building, maintaining and publishing marketing content.
     `,
     image: SilverhookIcon,
   },
@@ -82,7 +82,7 @@ export function Experience() {
             return (
               <li
                 key={experience.title + experience.organization.name}
-                className="mb-10 ml-5 list-none"
+                className="mb-20 ml-5 list-none"
               >
                 <span
                   className="
@@ -103,22 +103,17 @@ export function Experience() {
                 >
                   {experience.image && <img src={experience.image}></img>}
                 </span>
-                <p style={{ margin: "0.2rem 0" }}>
+                <p className="font-bold">
                   {experience.title} at
-                  <a
-                    className="m-0 ml-1"
-                    href={experience.organization.website}
-                  >
+                  <a className="ml-1" href={experience.organization.website}>
                     {experience.organization.name}
                   </a>
                 </p>
-                <div className="text-xs sm:text-sm m-0 p-0">
-                  <time className="block mb-2 leading-none text-gray-400">
-                    {experience.toFrom}
-                  </time>
-
-                  <p className="mb-4">{experience.description}</p>
-                </div>
+                <p>{experience.description}</p>
+                <p>
+                  <span>- </span>
+                  <time className="text-sm italic">{experience.toFrom}</time>
+                </p>
               </li>
             );
           })}

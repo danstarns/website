@@ -33,7 +33,7 @@ export function Contact() {
 
   return (
     <Section id="contact" header="Contact">
-      <div className="container mx-auto text-xs sm:text-sm">
+      <div className="container mx-auto">
         {error && <p>Something went wrong! Try emailing direct.</p>}
         {!error && (
           <form onSubmit={onSubmit}>
