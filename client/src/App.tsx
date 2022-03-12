@@ -7,7 +7,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Experience } from "./components/Experience";
 
-const App = () => {
+export default function App() {
   return (
     <div className="bg-lightgrey">
       <Header />
@@ -26,6 +26,4 @@ const App = () => {
       <Footer></Footer>
     </div>
   );
-};
-
-export default App;
+}

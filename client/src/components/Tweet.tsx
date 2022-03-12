@@ -6,7 +6,7 @@ export interface Props {
   nestedTweet?: boolean;
 }
 
-const RetweetIcon = () => {
+function RetweetIcon() {
   return (
     <svg className="mr-3" width="24" height="24" viewBox="0 0 24 24">
       <path
@@ -15,9 +15,9 @@ const RetweetIcon = () => {
       />
     </svg>
   );
-};
+}
 
-export const Tweet = (props: Props) => {
+export function Tweet(props: Props) {
   const {
     id,
     author,
@@ -134,4 +134,4 @@ export const Tweet = (props: Props) => {
       )}
     </div>
   );
-};
+}

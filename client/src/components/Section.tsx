@@ -7,7 +7,7 @@ export interface Props {
   ignoreHeader?: boolean;
 }
 
-export const Section = (props: Props) => {
+export function Section(props: Props) {
   return (
     <section id={props.id} className="mt-10">
       <article className="prose lg:prose-xl">
@@ -16,4 +16,4 @@ export const Section = (props: Props) => {
       </article>
     </section>
   );
-};
+}

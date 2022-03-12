@@ -26,18 +26,6 @@ const experiences = [
   {
     title: "Software Engineer",
     organization: {
-      name: "Rocket Connect",
-      website: "https://rocketconnect.co.uk",
-    },
-    toFrom: "Mar 2019 - Present",
-    description: `
-      Building software solutions.
-    `,
-    image: RocketConnectIcon,
-  },
-  {
-    title: "Software Engineer",
-    organization: {
       name: "IMMJ Systems",
       website: "https://immjsystems.com/",
     },
@@ -46,6 +34,18 @@ const experiences = [
       Building an EDM(Electronic Document Management) solution created specifically for UK healthcare.
     `,
     image: IMMJIcon,
+  },
+  {
+    title: "Software Engineer",
+    organization: {
+      name: "Rocket Connect",
+      website: "https://rocketconnect.co.uk",
+    },
+    toFrom: "Mar 2019 - Present",
+    description: `
+      Building software solutions.
+    `,
+    image: RocketConnectIcon,
   },
   {
     title: "Developer",
