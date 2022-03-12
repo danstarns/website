@@ -6,7 +6,12 @@
     "type": "git",
     "url": "git+https://github.com/danstarns/website.git"
   },
-  "author": "ne@danielstarns.com",
+  "scripts": {
+    "postinstall": "cd ./client && npm install && cd ../server && npm install",
+    "client": "cd ./client && npm run start",
+    "server": "cd ./server && npm run start"
+  },
+  "author": "me@danielstarns.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/danstarns/website/issues"
