@@ -19,7 +19,7 @@ const experiences = [
     },
     toFrom: "Sep 2020 - Present",
     description: `
-      Building & maintaining open-source Typescript GraphQL integrations for Neo4j the database. 
+      Building & maintaining and publishing open-source Typescript GraphQL integrations for Neo4j the database. 
     `,
     image: Neo4jIcon,
   },
@@ -77,7 +77,7 @@ export function Experience() {
   return (
     <Section id="experience" header="Experience">
       <div className="px-8">
-        <ul className="relative border-l border-black">
+        <ul className="relative border-l-2 border-black">
           {experiences.map((experience) => {
             return (
               <li
