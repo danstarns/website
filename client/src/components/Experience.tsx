@@ -77,7 +77,7 @@ export function Experience() {
   return (
     <Section id="experience" header="Experience">
       <div className="px-8">
-        <ul className="relative border-l-2 border-black">
+        <ul className="relative border-l-2 border-300">
           {experiences.map((experience) => {
             return (
               <li
@@ -118,7 +118,9 @@ export function Experience() {
                 <p>{experience.description}</p>
                 <p>
                   <span>- </span>
-                  <time className="text-sm italic">{experience.toFrom}</time>
+                  <time className="text-sm italic font-bold">
+                    {experience.toFrom}
+                  </time>
                 </p>
               </li>
             );

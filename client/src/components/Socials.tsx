@@ -24,7 +24,7 @@ export function Socials() {
         href="https://www.linkedin.com/in/danielstarns/"
       >
         <FontAwesomeIcon
-          className="hover:text-blue-500"
+          className="hover:text-blue-800"
           icon={faLinkedin}
           size="2x"
         />
