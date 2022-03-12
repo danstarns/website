@@ -19,7 +19,7 @@ const experiences = [
     },
     toFrom: "Sep 2020 - Present",
     description: `
-      Building & maintaining and publishing open-source Typescript GraphQL integrations for Neo4j the database. 
+      Building, maintaining and publishing open-source Typescript GraphQL integrations for Neo4j the database. 
     `,
     image: Neo4jIcon,
   },
