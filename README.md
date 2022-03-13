@@ -36,10 +36,6 @@ npm run server
 npm run client
 ```
 
-## Deployment
-
-TODO
-
 ## License
 
 MIT me@danielstarns.com
