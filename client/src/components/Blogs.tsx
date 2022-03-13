@@ -21,7 +21,7 @@ export function Blogs() {
 
       const json = (await response.json()) as { items: any[] };
 
-      setBlogs(json.items.slice(0, 5));
+      setBlogs(json.items);
     } catch (error) {
       console.error(error);
     }
