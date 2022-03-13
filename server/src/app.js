@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const expressStaticGzip = require("express-static-gzip");
-const { HTTP_PORT, STATIC_FOLDER } = require("../config");
+const { HTTP_PORT, STATIC_FOLDER } = require("./config");
 const api = require("./routers/api");
 
 const app = express();

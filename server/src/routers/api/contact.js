@@ -1,5 +1,5 @@
 const email = require("../../email");
-const config = require("../../../config");
+const config = require("../../config");
 
 async function contact(req, res) {
   try {
