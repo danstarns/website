@@ -13,12 +13,16 @@ module.exports = {
   context: path.join(__dirname),
   target: "web",
   resolve: {
-    extensions: [".ts", ".tsx", ".mjs", ".json", ".js"], // IMPORTANT: .mjs has to be BEFORE .js
+    extensions: [".ts", ".tsx", ".mjs", ".json", ".js"],
   },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
+  ...(process.env.NODE_ENV === "production"
+    ? {
+        optimization: {
+          minimize: true,
+          minimizer: [new TerserPlugin()],
+        },
+      }
+    : {}),
   module: {
     rules: [
       {
@@ -64,7 +68,7 @@ module.exports = {
         isDevelopment ? "development" : "production"
       ),
     }),
-    new CompressionPlugin(),
+    ...(process.env.NODE_ENV === "production" ? [new CompressionPlugin()] : []),
   ],
   devServer: {
     static: {
