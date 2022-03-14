@@ -37,22 +37,30 @@ export function Blogs() {
     <Section id="blog" header="Blog">
       <div>
         <ul>
-          {blogs.map((b) => (
-            <li key={b.title}>
-              <a href={b.link}>{b.title}</a>
-              <p>
-                <span className="italic text-sm">
-                  -{" "}
-                  <time
-                    title={`Time Posted: ${new Date(b.pubDate).toUTCString()}`}
-                    dateTime={new Date(b.pubDate).toISOString()}
-                  >
-                    {format(new Date(b.pubDate), "h:mm a - MMM d, y")}
-                  </time>
-                </span>
-              </p>
-            </li>
-          ))}
+          {blogs.map((b) => {
+            const strippedDate = b.pubDate.split(" ").join("T");
+
+            return (
+              <li key={b.title}>
+                <a href={b.link}>{b.title}</a>
+                <p>
+                  <span className="italic text-sm">
+                    -{" "}
+                    <time
+                      title={`Time Posted: ${new Date(
+                        strippedDate
+                      ).toUTCString()}`}
+                      dateTime={new Date(
+                        strippedDate.split(" ")[0]
+                      ).toISOString()}
+                    >
+                      {format(new Date(strippedDate), "h:mm a - MMM d, y")}
+                    </time>
+                  </span>
+                </p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </Section>
