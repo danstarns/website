@@ -18,13 +18,15 @@ export function Repo(props: Props) {
         text-xs
         sm:text-base
         w-full 
+        bg-white
         border 
         rounded  
         overflow-hidden 
         shadow 
         leading-tight 
-        pt-0 
-        p-3
+        pt-0
+        px-3 
+        sm:px-6
         flex flex-col justify-between
         "
     >

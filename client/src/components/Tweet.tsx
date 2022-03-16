@@ -65,6 +65,7 @@ export function Tweet(props: Props) {
       className={`
         w-full
         p-3
+        bg-white
         ${!props.nestedTweet && `border shadow rounded leading-tight`} 
         `}
     >
