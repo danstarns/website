@@ -4,7 +4,7 @@ import Sig from "../../public/sig.svg";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white p-5">
+    <footer className="w-full bg-white p-5 border-t shadow leading-tight">
       <article className="prose lg:prose-xl mx-auto">
         <div className="flex flex-row align-center justify-between">
           <div className="mt-5">
