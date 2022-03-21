@@ -3,6 +3,7 @@ require("dotenv").config();
 const {
   HTTP_PORT,
   STATIC_FOLDER,
+  SITE_URL = "https://danielstarns.com",
   EMAIL_CC,
   EMAIL_SENDER_ADDRESS,
   EMAIL_SENDER_PASSWORD,
@@ -14,6 +15,7 @@ const {
 module.exports = {
   HTTP_PORT,
   STATIC_FOLDER,
+  SITE_URL,
   EMAIL_CC,
   EMAIL_SENDER_ADDRESS,
   EMAIL_SENDER_PASSWORD,
