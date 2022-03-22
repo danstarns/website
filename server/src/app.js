@@ -1,5 +1,4 @@
 const express = require("express");
-const helmet = require("helmet");
 const cors = require("cors");
 const expressStaticGzip = require("express-static-gzip");
 const fs = require("fs");
@@ -10,7 +9,6 @@ const api = require("./routers/api");
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(helmet());
 app.use(expressStaticGzip(config.STATIC_FOLDER));
 
 app.get("/subscribe", (_, r) => r.redirect(`${config.CLIENT_URL}/#subscribe`));
