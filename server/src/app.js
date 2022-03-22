@@ -11,10 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
-app.use((_, res, next) => {
-  res.setHeader("Content-Security-Policy", "script-src 'unsafe-inline'");
-  return next();
-});
 app.use(expressStaticGzip(config.STATIC_FOLDER));
 
 app.get("/subscribe", (_, r) => r.redirect(`${config.CLIENT_URL}/#subscribe`));
