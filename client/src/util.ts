@@ -1,12 +1,5 @@
 import { API_URL } from "./config";
 
-export interface PublicMetrics {
-  retweet_count: number;
-  reply_count: number;
-  like_count: number;
-  quote_count: number;
-}
-
 export interface Author {
   url: string;
   id: string;
@@ -24,7 +17,6 @@ export interface Attachments {
 export interface ReferencedTweet {
   type: string;
   author: Author;
-  public_metrics: PublicMetrics;
   text: string;
   id: string;
   created_at: Date;
@@ -45,7 +37,6 @@ export interface Attachments {
 }
 
 export interface Tweet {
-  public_metrics: PublicMetrics;
   text: string;
   referenced_tweets: ReferencedTweet[];
   id: string;

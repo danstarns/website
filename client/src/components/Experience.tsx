@@ -97,7 +97,6 @@ export function Experience() {
                   border 
                   rounded  
                   shadow 
-                  leading-tight  
                   p-3
                   "
                 >

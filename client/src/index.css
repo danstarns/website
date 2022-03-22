@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 .prose > * {
-    color:black;
+  color: black;
 }
 
+.remove-p-margin-x {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

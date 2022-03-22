@@ -1,5 +1,4 @@
 import { Section } from "./Section";
-import GitHubCalendar from "react-github-calendar";
 import * as Repo from "./Repo";
 import { useCallback, useEffect, useState } from "react";
 import { API_URL } from "../config";
@@ -27,7 +26,6 @@ export function OpenSource() {
 
   return (
     <Section id="open-source" header="Open Source">
-      <h3>Pinned Projects</h3>
       <div className="grid gap-4 grid-cols-2">
         {repos.map((repo) => (
           <Repo.Repo
@@ -35,15 +33,9 @@ export function OpenSource() {
             name={repo.name}
             description={repo.description}
             primaryLanguage={repo.primaryLanguage}
-            forkCount={repo.forkCount}
-            stargazerCount={repo.stargazerCount}
             url={repo.url}
           ></Repo.Repo>
         ))}
-      </div>
-      <h3>Contributions</h3>
-      <div className="pt-5">
-        <GitHubCalendar username="danstarns" />
       </div>
     </Section>
   );

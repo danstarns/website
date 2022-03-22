@@ -12,10 +12,13 @@ export function About() {
       <div className="flex justify-center flex-wrap md:justify-between md:flex-nowrap">
         <div>
           <p>
-            I will collaborate with you and your team to produce products that
-            your customers will love. Using modern technology and the latest
-            techniques I will seamlessly fit into your organization contributing
-            from the get-go.
+            Exploring this page you will find a real-time reflection of my
+            content. Keep scrolling to find more out about my;{" "}
+            <a href="#blog">latest blogs</a>,{" "}
+            <a href="#open-source">open-source work</a> and{" "}
+            <a href="#tweets">tweets</a>. This site is also open source and you
+            can checkout the source code{" "}
+            <a href="https://github.com/danstarns/website">here</a>.
           </p>
           <p>
             <a href="https://neo4j.com/product/graphql-library/">
