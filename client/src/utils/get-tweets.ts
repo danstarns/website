@@ -47,7 +47,7 @@ export interface Tweet {
   attachments: Attachments;
 }
 
-export const getTweets = async () => {
+export const getTweets = async (): Promise<Tweet[]> => {
   const response = await fetch(`${API_URL}/api/tweets`);
 
   if (response.status !== 200 || !response.ok) {

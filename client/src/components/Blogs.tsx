@@ -1,36 +1,22 @@
 import { format } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
+import { getBlogs, Blog } from "../utils/get-blogs";
 import { Section } from "./Section";
 
-interface IBlog {
-  link: string;
-  title: string;
-  pubDate: string;
-}
-
 export function Blogs() {
-  const [blogs, setBlogs] = useState<IBlog[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
 
-  const getBlogs = useCallback(async () => {
+  const init = useCallback(async () => {
     try {
-      const response = await fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@danstarns"
-      );
-
-      if (response.status !== 200 || !response.ok) {
-        throw new Error(await response.text());
-      }
-
-      const json = (await response.json()) as { items: any[] };
-
-      setBlogs(json.items);
+      const b = await getBlogs();
+      setBlogs(b);
     } catch (error) {
       console.error(error);
     }
   }, []);
 
   useEffect(() => {
-    getBlogs();
+    init();
   }, []);
 
   return (
