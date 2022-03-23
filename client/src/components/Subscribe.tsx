@@ -2,6 +2,7 @@ import { Section } from "./Section";
 import { API_URL } from "../config";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
+import { subscribe } from "../utils/subscribe";
 
 export function Subscribe() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -11,17 +12,9 @@ export function Subscribe() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_URL}/api/subscribe`, {
-        method: "POST",
-        body: JSON.stringify({
-          email: e.target.elements.email.value,
-        }),
-        headers: { "Content-Type": "application/json" },
+      await subscribe({
+        email: e.target.elements.email.value,
       });
-
-      if (response.status !== 200 || !response.ok) {
-        throw new Error(await response.text());
-      }
     } catch (error) {
       console.error(error);
     } finally {
