@@ -1,5 +1,5 @@
-import { format } from "date-fns";
 import { Tweet as ITweet } from "../utils/get-tweets";
+import { Time } from "./Time";
 
 export interface Props {
   tweet: ITweet;
@@ -67,12 +67,7 @@ export function Tweet(props: Props) {
       {!props.nestedTweet && (
         <div className="text-sm mt-3">
           <a href={tweetUrl} className="italic">
-            <time
-              title={`Time Posted: ${createdAt.toUTCString()}`}
-              dateTime={createdAt.toISOString()}
-            >
-              {format(createdAt, "h:mm a - MMM d, y")}
-            </time>
+            <Time date={createdAt} />
           </a>
         </div>
       )}

@@ -2,6 +2,7 @@ export interface Blog {
   link: string;
   title: string;
   pubDate: string;
+  thumbnail: string;
 }
 
 export const getBlogs = async (): Promise<Blog[]> => {
