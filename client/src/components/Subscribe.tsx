@@ -3,6 +3,7 @@ import { API_URL } from "../config";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
 import { subscribe } from "../utils/subscribe";
+import { SubmitButton } from "./SubmitButton";
 
 export function Subscribe() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -25,11 +26,9 @@ export function Subscribe() {
   return (
     <Section id="subscribe" header="Subscribe">
       <div className="container mx-auto">
-        <p className="font-bold">Hey 👋, do you like my content ? </p>
+        <p className="font-bold">Hey,</p>
+        <p className="font-bold">Do you like my content ?</p>
         <p>Enter your email below to sign up for my mail list.</p>
-        <p className="italic">
-          I will occasionally email you about my content.
-        </p>
 
         <form onSubmit={onSubmit}>
           <div className="mt-5">
@@ -42,35 +41,19 @@ export function Subscribe() {
               type="email"
             ></FormInput>
           </div>
-          <button
-            className="
-                mt-6 
-                bg-black 
-                hover:bg-lightgrey 
-                text-white 
-                hover:text-black 
-                border
-                border-white 
-                hover:border-black 
-                font-bold 
-                py-2 
-                px-4 
-                rounded 
-                focus:bg-lightgrey 
-                focus:text-black"
-            type="submit"
-            disabled={isSubmitted}
-          >
-            {isSubmitted ? "Signed Up!" : "Sign Up"}
-          </button>
+          <div className="mt-6">
+            <SubmitButton
+              text={isSubmitted ? "Subscribed!" : "Subscribe"}
+              disabled={isSubmitted}
+            />
+          </div>
           <p className="italic text-sm">
-            By submitting you accept that the code here will add you to a
-            private google sheet, only shared with me, and you can unsubscribe
-            anytime
+            By submitting you accept your email will only be shared with me, and
+            you can unsubscribe anytime
             <a className="ml-1" href={`${API_URL}/unsubscribe`}>
               here
             </a>
-            .
+            . I will use your email to occasionally email you about my content.
           </p>
         </form>
       </div>

@@ -2,6 +2,7 @@ import { Section } from "./Section";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
 import { sendContact, SendContactPayload } from "../utils/send-contact";
+import { SubmitButton } from "./SubmitButton";
 
 export function Contact() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -62,27 +63,12 @@ export function Contact() {
                 textArea={true}
               ></FormInput>
             </div>
-            <button
-              className="
-                mt-6 
-                bg-black 
-                hover:bg-lightgrey 
-                text-white 
-                hover:text-black 
-                border
-                border-white 
-                hover:border-black 
-                font-bold 
-                py-2 
-                px-4 
-                rounded 
-                focus:bg-lightgrey 
-                focus:text-black"
-              type="submit"
-              disabled={isSubmitted}
-            >
-              {isSubmitted ? "Sent!" : "Send"}
-            </button>
+            <div className="mt-6">
+              <SubmitButton
+                text={isSubmitted ? "Sent!" : "Send"}
+                disabled={isSubmitted}
+              />
+            </div>
           </form>
         )}
       </div>
