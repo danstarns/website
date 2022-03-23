@@ -1,14 +1,8 @@
 import { faBookmark } from "../icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Repo } from "../utils/get-repos";
 
-export interface Props {
-  name: string;
-  url: string;
-  description: string;
-  primaryLanguage: { color: string; name: string };
-}
-
-export function Repo(props: Props) {
+export function Repo(props: Repo) {
   return (
     <div
       key={props.name}

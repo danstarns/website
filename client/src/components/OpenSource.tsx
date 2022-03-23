@@ -1,40 +1,35 @@
 import { Section } from "./Section";
-import * as Repo from "./Repo";
+import { Repo as RepoComponent } from "./Repo";
 import { useCallback, useEffect, useState } from "react";
-import { API_URL } from "../config";
+import { getRepos, Repo as IRepo } from "../utils/get-repos";
 
 export function OpenSource() {
-  const [repos, setRepos] = useState<Repo.Props[]>([]);
+  const [repos, setRepos] = useState<IRepo[]>([]);
 
-  const getRepos = useCallback(async () => {
+  const init = useCallback(async () => {
     try {
-      const response = await fetch(`${API_URL}/api/repos`);
-
-      if (response.status !== 200 || !response.ok) {
-        throw new Error(await response.text());
-      }
-
-      setRepos(await response.json());
+      const r = await getRepos();
+      setRepos(r);
     } catch (error) {
       console.error(error);
     }
   }, []);
 
   useEffect(() => {
-    getRepos();
+    init();
   }, []);
 
   return (
     <Section id="open-source" header="Open Source">
       <div className="grid gap-4 grid-cols-2">
         {repos.map((repo) => (
-          <Repo.Repo
+          <RepoComponent
             key={repo.name}
             name={repo.name}
             description={repo.description}
             primaryLanguage={repo.primaryLanguage}
             url={repo.url}
-          ></Repo.Repo>
+          ></RepoComponent>
         ))}
       </div>
     </Section>
