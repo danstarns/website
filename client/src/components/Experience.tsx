@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getExperiences, Experience } from "../utils/get-experiences";
+import { getExperiences, Experience } from "../api/get-experiences";
 import { Section } from "./Section";
 
 export function Experience() {

@@ -1,7 +1,7 @@
 import { Section } from "./Section";
 import { Repo as RepoComponent } from "./Repo";
 import { useCallback, useEffect, useState } from "react";
-import { getRepos, Repo as IRepo } from "../utils/get-repos";
+import { getRepos, Repo as IRepo } from "../api/get-repos";
 
 export function OpenSource() {
   const [repos, setRepos] = useState<IRepo[]>([]);

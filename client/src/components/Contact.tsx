@@ -1,7 +1,7 @@
 import { Section } from "./Section";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
-import { sendContact, SendContactPayload } from "../utils/send-contact";
+import { sendContact, SendContactPayload } from "../api/send-contact";
 import { SubmitButton } from "./SubmitButton";
 
 export function Contact() {

@@ -1,6 +1,6 @@
 import { faBookmark } from "../icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Repo } from "../utils/get-repos";
+import { Repo } from "../api/get-repos";
 
 export function Repo(props: Repo) {
   return (

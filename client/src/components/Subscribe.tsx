@@ -2,7 +2,7 @@ import { Section } from "./Section";
 import { API_URL } from "../config";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
-import { subscribe } from "../utils/subscribe";
+import { subscribe } from "../api/subscribe";
 import { SubmitButton } from "./SubmitButton";
 
 export function Subscribe() {

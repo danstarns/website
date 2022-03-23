@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getBlogs, Blog } from "../utils/get-blogs";
+import { getBlogs, Blog } from "../api/get-blogs";
 import { Section } from "./Section";
 import { Time } from "./Time";
 

@@ -1,4 +1,4 @@
-import { Tweet as ITweet } from "../utils/get-tweets";
+import { Tweet as ITweet } from "../api/get-tweets";
 import { Time } from "./Time";
 
 export interface Props {
