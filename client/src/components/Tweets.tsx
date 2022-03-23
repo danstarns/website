@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getTweets, Tweet as ITweet } from "../util";
+import { getTweets, Tweet as ITweet } from "../utils/get-tweets";
 import { Section } from "./Section";
 import { Tweet } from "./Tweet";
 

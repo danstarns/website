@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Tweet as ITweet } from "../util";
+import { Tweet as ITweet } from "../utils/get-tweets";
 
 export interface Props {
   tweet: ITweet;
