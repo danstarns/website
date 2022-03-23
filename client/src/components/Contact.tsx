@@ -1,7 +1,7 @@
 import { Section } from "./Section";
-import { API_URL } from "../config";
 import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
+import { sendContact, SendContactPayload } from "../utils/send-contact";
 
 export function Contact() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -13,18 +13,12 @@ export function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_URL}/api/contact`, {
-        method: "POST",
-        body: JSON.stringify({
-          email: e.target.elements.from.value,
-          message: e.target.elements.message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
+      const payload: SendContactPayload = {
+        email: e.target.elements.from.value,
+        message: e.target.elements.message.value,
+      };
 
-      if (response.status !== 200 || !response.ok) {
-        throw new Error(await response.text());
-      }
+      await sendContact(payload);
     } catch (error) {
       console.error(error);
       setError((error as Error).message);
