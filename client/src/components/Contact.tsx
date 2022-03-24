@@ -3,7 +3,6 @@ import { useCallback, useState } from "react";
 import { FormInput } from "./FormInput";
 import { sendContact, SendContactPayload } from "../api/send-contact";
 import { SubmitButton } from "./SubmitButton";
-import { CONTACT_FORM_ID } from "../config";
 
 export function Contact() {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -32,7 +31,7 @@ export function Contact() {
       <div className="container mx-auto">
         {error && <p>Something went wrong! Try emailing direct.</p>}
         {!error && (
-          <form onSubmit={onSubmit} id={CONTACT_FORM_ID}>
+          <form onSubmit={onSubmit} id={"CONTACT_FORM_ID"}>
             <div className="mt-5">
               <FormInput
                 id="to"

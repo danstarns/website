@@ -1,4 +1,3 @@
-import { CONTACT_FORM_ID } from "./config";
 import { getBrowser, Browser, getPage } from "./puppeteer";
 
 describe("contact", () => {
@@ -15,6 +14,6 @@ describe("contact", () => {
   test("should successfully contact", async () => {
     const page = await getPage({ browser });
 
-    await page.waitForSelector(`#${CONTACT_FORM_ID}`);
+    await page.waitForSelector(`#CONTACT_FORM_ID`);
   });
 });
