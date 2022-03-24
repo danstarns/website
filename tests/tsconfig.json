@@ -1,8 +1,9 @@
 {
   "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": "."
+    "rootDir": "../",
+    "baseUrl": ".",
+    "allowJs": true
   },
   "include": ["src/**/*"]
 }

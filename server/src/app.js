@@ -33,11 +33,13 @@ app.get("*", expressStaticGzip(config.STATIC_FOLDER));
 app.use("*", expressStaticGzip(config.STATIC_FOLDER));
 
 async function listen() {
-  await app.listen(config.HTTP_PORT);
+  const server = await app.listen(config.HTTP_PORT);
 
   console.log(
     `Serving files in ${config.STATIC_FOLDER} on port ${config.HTTP_PORT}`
   );
+
+  return server;
 }
 
 module.exports = {
