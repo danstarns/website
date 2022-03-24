@@ -21,7 +21,7 @@ export async function getBrowser() {
   }
 
   browser = await puppeteer.launch({
-    headless: false,
+    headless: !Boolean(process.env.HEADLESS),
     defaultViewport: null,
     args: ["--disable-web-security"],
   });
