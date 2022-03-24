@@ -1,33 +1,14 @@
-import * as path from "path";
-import * as fs from "fs";
 import puppeteer, { Browser } from "puppeteer";
+import { HTTP_PORT } from "./config";
 
-const bundlePath = path.join(__dirname, "../../client/dist/index.html");
 let browser: puppeteer.Browser | null;
-let bundle: string = "";
-
-async function getBundle() {
-  if (bundle) {
-    return bundle;
-  }
-
-  bundle = (await fs.promises.readFile(bundlePath, "utf-8")) as string;
-
-  return bundle;
-}
 
 export async function getPage(options: {
   browser: puppeteer.Browser;
 }): Promise<puppeteer.Page> {
-  const bundle = await getBundle();
-
   const page = await options.browser.newPage();
 
-  await page.setRequestInterception(true);
-  page.on("request", (request) => {
-    request.respond({ status: 200, contentType: "text/html", body: bundle });
-  });
-  await page.goto("http://localhost");
+  await page.goto(`http://localhost:${HTTP_PORT}`);
 
   await page.waitForNetworkIdle();
 
@@ -40,7 +21,7 @@ export async function getBrowser() {
   }
 
   browser = await puppeteer.launch({
-    headless: !Boolean(process.env.HEADLESS),
+    headless: false,
     defaultViewport: null,
     args: ["--disable-web-security"],
   });

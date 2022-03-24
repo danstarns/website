@@ -5,9 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-const HtmlInlineScriptPlugin = require("html-inline-script-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   mode: "none",
@@ -67,16 +65,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       favicon: "./public/favicon.svg",
-      ...(process.env.NODE_ENV === "test" ? { inject: "body" } : {}),
     }),
     ...(process.env.NODE_ENV === "production" ? [new CompressionPlugin()] : []),
-    ...(process.env.NODE_ENV === "test"
-      ? [
-          new HtmlInlineScriptPlugin({
-            htmlMatchPattern: [/index.html$/],
-          }),
-        ]
-      : []),
   ],
   devServer: {
     static: {
