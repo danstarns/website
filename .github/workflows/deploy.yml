@@ -38,13 +38,13 @@ jobs:
           STATIC_FOLDER: "../client/dist"
           CLIENT_URL: "http://localhost:5000"
           SERVER_URL: "http://localhost:5000"
-          EMAIL_CC: ${{ secrets[env.EMAIL_CC] }}
-          EMAIL_SENDER_ADDRESS: ${{ secrets[env.EMAIL_SENDER_ADDRESS] }}
-          EMAIL_SENDER_PASSWORD: ${{ secrets[env.EMAIL_SENDER_PASSWORD] }}
-          EMAIL_HOST: ${{ secrets[env.EMAIL_HOST] }}
-          GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID: ${{ secrets[env.GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID] }}
-          GOOGLE_SHEETS_EMAIL: ${{ secrets[env.GOOGLE_SHEETS_EMAIL] }}
-          GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets[env.GOOGLE_SHEETS_PRIVATE_KEY] }}
+          EMAIL_CC: ${{ secrets.EMAIL_CC }}
+          EMAIL_SENDER_ADDRESS: ${{ secrets.EMAIL_SENDER_ADDRESS }}
+          EMAIL_SENDER_PASSWORD: ${{ secrets.EMAIL_SENDER_PASSWORD }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID: ${{ secrets.GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID }}
+          GOOGLE_SHEETS_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
+          GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
       
   deploy:
     runs-on: ubuntu-latest
