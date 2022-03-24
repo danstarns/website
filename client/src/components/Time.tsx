@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-
 export interface Props {
   str?: string;
   date?: Date;
@@ -16,6 +14,9 @@ export function Time(props: Props) {
     internalDate = new Date(strippedDate);
   }
 
+  const timeStr = internalDate.toLocaleTimeString();
+  const dateStr = internalDate.toLocaleDateString();
+
   return (
     <time
       title={`Time Posted: ${internalDate.toUTCString()}`}
@@ -23,7 +24,7 @@ export function Time(props: Props) {
         internalDate.toISOString().split(" ")[0]
       ).toISOString()}
     >
-      {format(internalDate, "h:mm a - MMM d, y")}
+      {dateStr} - {timeStr}
     </time>
   );
 }

@@ -7,9 +7,10 @@
     "url": "git+https://github.com/danstarns/website.git"
   },
   "scripts": {
-    "postinstall": "cd ./client && npm install && cd ../server && npm install",
-    "client": "cd ./client && npm run start",
-    "server": "cd ./server && npm run start"
+    "postinstall": "cd ./client && npm i && cd ../server && npm i && cd ../tests && npm i",
+    "client": "cd ./client && npm start",
+    "server": "cd ./server && npm start",
+    "test": "cd ./tests && npm test"
   },
   "author": "me@danielstarns.com",
   "license": "MIT",

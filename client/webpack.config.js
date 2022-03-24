@@ -1,11 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const isDevelopment = process.env.NODE_ENV !== "production";
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
+const HtmlInlineScriptPlugin = require("html-inline-script-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   mode: "none",
@@ -29,9 +31,10 @@ module.exports = {
         test: /\.tsx?$/,
         loader: "ts-loader",
         exclude: "/node_modules/",
+        options: { transpileOnly: true },
       },
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
         use: [
           {
             loader: "url-loader",
@@ -51,28 +54,33 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "",
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: ["public"],
-    }),
-    new HtmlWebpackPlugin({
-      favicon: "./public/favicon.svg",
-      template: path.join(__dirname, "src", "index.html"),
     }),
     new Dotenv({
       silent: true,
     }),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(
-        isDevelopment ? "development" : "production"
-      ),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      favicon: "./public/favicon.svg",
+      ...(process.env.NODE_ENV === "test" ? { inject: "body" } : {}),
     }),
     ...(process.env.NODE_ENV === "production" ? [new CompressionPlugin()] : []),
+    ...(process.env.NODE_ENV === "test"
+      ? [
+          new HtmlInlineScriptPlugin({
+            htmlMatchPattern: [/index.html$/],
+          }),
+        ]
+      : []),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: "dist",
     },
     compress: true,
     port: 4000,

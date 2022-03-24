@@ -1,5 +1,3 @@
-import { faBookmark } from "../icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Repo } from "../api/get-repos";
 
 export function Repo(props: Repo) {
@@ -22,7 +20,7 @@ export function Repo(props: Repo) {
     >
       <div>
         <p className="remove-p-margin-x">
-          <FontAwesomeIcon size="1x" icon={faBookmark} />
+          <i className="hover:text-blue-500 fa-solid fa-bookmark" />
           <a className="ml-3" href={props.url}>
             {props.name}
           </a>
