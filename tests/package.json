@@ -7,8 +7,8 @@
     "url": "git+https://github.com/danstarns/website.git"
   },
   "scripts": {
-    "test-build": "cd ../client && npm run test-build",
-    "test": "cross-env NODE_ENV=test npm run test-build && jest"
+    "build": "cd ../client && npm run test-build",
+    "test": "jest"
   },
   "author": "me@danielstarns.com",
   "license": "MIT",

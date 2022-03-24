@@ -31,6 +31,11 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm install
+      - name: Build Client
+        run: cd ./client && npm run test-build
+        env:
+          CONTACT_FORM_ID: CONTACT_FORM_ID
+          NODE_ENV: test
       - name: Run Tests
         run: npm test
         env:
