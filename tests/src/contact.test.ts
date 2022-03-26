@@ -68,20 +68,17 @@ describe("contact", () => {
           bodyParts: ["text"],
         }
       )) {
-        emails.push(m);
-      }
-
-      const [email] = emails.filter((email) => {
-        if (!email?.bodyParts) {
+        if (!m?.bodyParts) {
           return false;
         }
 
-        const text = email?.bodyParts.get("text")?.toString().trim();
+        const text = m?.bodyParts.get("text")?.toString().trim();
+        if (text === message.trim()) {
+          emails.push(m);
+        }
+      }
 
-        return text === message.trim();
-      });
-
-      expect(email).toBeDefined();
+      expect(emails[0]).toBeDefined();
     } finally {
       await lock.release();
     }
