@@ -54,7 +54,7 @@ describe("contact", () => {
 
     await page.click(selectors.button);
     await page.waitForNetworkIdle();
-    await page.waitForTimeout(2000); // <- Assuming enough time for email to process
+    await page.waitForTimeout(5000); // <- Assuming enough time for email to process
 
     const lock = await mailClient.getMailboxLock("INBOX");
     try {
