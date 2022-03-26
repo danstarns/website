@@ -18,12 +18,13 @@
   "homepage": "https://github.com/danstarns/website#readme",
   "devDependencies": {
     "@tsconfig/node12": "^1.0.9",
+    "@types/imapflow": "^1.0.8",
     "@types/jest": "^27.4.1",
+    "@types/node-fetch": "^2.6.1",
+    "@types/qs": "^6.9.7",
+    "@types/randomstring": "^1.1.8",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
-    "html-inline-script-webpack-plugin": "^3.0.0",
-    "html-webpack-inline-source-plugin": "^0.0.10",
-    "html-webpack-plugin": "5.5.0",
     "jest": "27.5.1",
     "puppeteer": "^13.5.0",
     "randomstring": "1.2.2",
@@ -31,5 +32,10 @@
     "ts-loader": "9.2.6",
     "ts-node": "10.5.0",
     "typescript": "4.6.2"
+  },
+  "dependencies": {
+    "imapflow": "^1.0.88",
+    "node-fetch": "^2.6.7",
+    "qs": "^6.10.3"
   }
 }
