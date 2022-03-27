@@ -43,7 +43,7 @@ In each folder copy the `.env.example` file to `./.env` and then adjust config t
 npm run test
 ```
 
-The tests will first build the client, run the server and then use puppeteer to execute the interact with the page. Use the `./.env` file in the `/tests` folder to override either the `client/` or `server/` env.
+The tests will first build the client, run the server and then use puppeteer to interact with the page. Use the `./.env` file in the `/tests` folder to override either the `client/` or `server/` env.
 
 ### Run Server
 
