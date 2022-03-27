@@ -45,6 +45,7 @@ jobs:
           GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID: ${{ secrets.GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID }}
           GOOGLE_SHEETS_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
           GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
+          API_URL: "http://localhost:5000"
       
   deploy:
     runs-on: ubuntu-latest
