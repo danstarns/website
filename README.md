@@ -1,6 +1,7 @@
 # website
 
 [![Deploy](https://github.com/danstarns/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/danstarns/website/actions/workflows/deploy.yml)
+
 https://www.danielstarns.com/
 
 This site is built to serve as a real-time curation of my content. The project contains a React app in `client/` and a Node.js server in `server/`. The `/tests` folder contains e2e tests to ensure that both the contact and subscribe functionally works.
