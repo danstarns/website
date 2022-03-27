@@ -56,6 +56,7 @@ describe("e2e", () => {
       message
     );
 
+    await page.waitForTimeout(10000);
     await page.click(selectors.button);
     await page.waitForNetworkIdle();
     await page.waitForTimeout(5000); // <- Assuming enough time for email to process
