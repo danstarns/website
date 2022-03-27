@@ -1,7 +1,6 @@
 # website
 
-[![Deploy](https://github.com/danstarns/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/danstarns/website/actions/workflows/deploy.yml) ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
-
+[![Deploy](https://github.com/danstarns/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/danstarns/website/actions/workflows/deploy.yml)
 https://www.danielstarns.com/
 
 This site is built to serve as a real-time curation of my content. The project contains a React app in `client/` and a Node.js server in `server/`. The `/tests` folder contains e2e tests to ensure that both the contact and subscribe functionally works.
