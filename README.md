@@ -91,6 +91,20 @@ Starts webpack dev server - default: http://localhost:4000
 npm run client
 ```
 
+## Deployment
+
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
+
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+This site is deployed to a [Digital Ocean](https://www.digitalocean.com/) Ubuntu Droplet(the cheapest one). It is running [Nginx](https://www.nginx.com/), [Certbot](https://certbot.eff.org/) and then [PM2](https://pm2.keymetrics.io/) (that's running the Node.js server). On push to main GitHub actions will SSH into the droplet, pull the latest code, build the client and then start the server.
+
+The domain is with [Google Domains](https://domains.google.com/).
+
+Overall it's costing about $7-10 per month to run.
+
 ## License
 
 MIT me@danielstarns.com
