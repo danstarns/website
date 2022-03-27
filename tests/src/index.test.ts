@@ -73,12 +73,13 @@ describe("e2e", () => {
         }
       )) {
         if (!m?.bodyParts) {
-          return false;
+          continue;
         }
 
         const text = m?.bodyParts.get("text")?.toString().trim();
         if (text === message.trim()) {
           emails.push(m);
+          break;
         }
       }
 
@@ -117,7 +118,6 @@ describe("e2e", () => {
 
     await page.click(selectors.button);
     await page.waitForNetworkIdle();
-    await page.waitForTimeout(5000); // <- Assuming enough time for email to process
 
     const doc = sheets.doc;
     const sheet = doc.sheetsByTitle.subscribers;
