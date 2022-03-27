@@ -30,7 +30,7 @@ export function Subscribe() {
         <p className="font-bold">Do you like my content ?</p>
         <p>Enter your email below to sign up for my mail list.</p>
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} id={"SUBSCRIBE_FORM_ID"}>
           <div className="mt-5">
             <FormInput
               id="email"
