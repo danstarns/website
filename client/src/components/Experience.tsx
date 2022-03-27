@@ -59,12 +59,6 @@ export function Experience() {
                   </a>
                 </p>
                 <p>{experience.description}</p>
-                <p>
-                  <span>- </span>
-                  <time className="text-sm italic font-bold">
-                    {experience.toFrom}
-                  </time>
-                </p>
               </li>
             );
           })}
