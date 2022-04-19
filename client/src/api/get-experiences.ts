@@ -46,7 +46,7 @@ const experiences: Experience[] = [
       website: "https://rocketconnect.co.uk",
     },
     description: `
-      Building software solutions.
+      Building software solutions plus providing consulting and training.
     `,
     image: RocketConnectIcon,
   },
