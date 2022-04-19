@@ -21,14 +21,12 @@ export function About() {
             <a href="https://github.com/danstarns/website">here</a>.
           </p>
           <p>
-            <a href="https://neo4j.com/product/graphql-library/">
-              @graphql @neo4j
-            </a>
+            <a href="https://prisma.io">@prisma</a>
           </p>
           <p>
             <a href="https://rocketconnect.co.uk/">@rocketconnect</a>
           </p>
-          <p>GraphQL, TypeScript, Blockchain, Databases</p>
+          <p>GraphQL, TypeScript, Blockchains, Databases, Investments, Life</p>
         </div>
         <img
           className="inline object-cover w-64 h-64 mr-2 rounded-full"

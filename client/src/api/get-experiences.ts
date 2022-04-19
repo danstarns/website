@@ -1,4 +1,6 @@
 // @ts-ignore
+import PrismaIcon from "../../public/prisma-icon.svg";
+// @ts-ignore
 import Neo4jIcon from "../../public/neo4j-icon.svg";
 // @ts-ignore
 import RocketConnectIcon from "../../public/rocketconnect-icon.svg";
@@ -17,6 +19,17 @@ export interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    title: "Software Engineer",
+    organization: {
+      name: "Prisma",
+      website: "https://prisma.io",
+    },
+    description: `
+      Building, maintaining and publishing open-source Typescript tools that make working with databases easy.
+    `,
+    image: PrismaIcon,
+  },
   {
     title: "Software Engineer",
     organization: {
