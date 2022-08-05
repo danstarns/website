@@ -4,9 +4,9 @@ import { About } from "./components/About";
 import { OpenSource } from "./components/OpenSource";
 import { Tweets } from "./components/Tweets";
 import { Contact } from "./components/Contact";
-import { Subscribe } from "./components/Subscribe";
 import { Footer } from "./components/Footer";
 import { Experience } from "./components/Experience";
+import { Talks } from "./components/Talks";
 
 export default function App() {
   return (
@@ -17,8 +17,8 @@ export default function App() {
           <div className="flex-column">
             <About />
             <Contact />
+            <Talks />
             <Blogs />
-            <Subscribe />
             <OpenSource />
             <Tweets />
             <Experience />

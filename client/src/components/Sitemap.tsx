@@ -12,9 +12,6 @@ export function SiteMap() {
           <a href="#blog">Blog</a>
         </li>
         <li>
-          <a href="#subscribe">Subscribe</a>
-        </li>
-        <li>
           <a href="#open-source">Open Source</a>
         </li>
         <li>

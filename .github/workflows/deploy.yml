@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-  tests: 
+  tests:
     runs-on: ubuntu-latest
     needs:
       - cache-dependencies
@@ -42,11 +42,8 @@ jobs:
           EMAIL_SENDER_ADDRESS: ${{ secrets.EMAIL_SENDER_ADDRESS }}
           EMAIL_SENDER_PASSWORD: ${{ secrets.EMAIL_SENDER_PASSWORD }}
           EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
-          GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID: ${{ secrets.GOOGLE_SHEETS_SUBSCRIBE_SHEET_ID }}
-          GOOGLE_SHEETS_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
-          GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
           API_URL: "http://localhost:5000"
-      
+
   deploy:
     runs-on: ubuntu-latest
     needs:
