@@ -12,6 +12,9 @@ export function SiteMap() {
           <a href="#blog">Blog</a>
         </li>
         <li>
+          <a href="#talks">Latest Talk</a>
+        </li>
+        <li>
           <a href="#open-source">Open Source</a>
         </li>
         <li>

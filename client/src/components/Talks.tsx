@@ -4,6 +4,22 @@ import GraphQLTalk from "../../public/graphql-talk.png";
 import JSMonthly1 from "../../public/js-monthly-talk1.png";
 // @ts-ignore
 import JSMonthly2 from "../../public/js-monthly-talk2.png";
+import { Section } from "./Section";
+
+function YoutubeEmbed({ embedId }) {
+  return (
+    <div className="p-3 bg-white rounded border shadow leading-tight">
+      <div className="aspect-w-16 aspect-h-9">
+        <iframe
+          src={`https://www.youtube.com/embed/${embedId}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  );
+}
 
 export function Talks() {
   return (
@@ -25,6 +41,10 @@ export function Talks() {
           alt="JS Monthly"
         />
       </div>
+
+      <Section id="talks" header="Latest Talk">
+        <YoutubeEmbed embedId={"iWGpTvSr-1E"} />
+      </Section>
     </div>
   );
 }
