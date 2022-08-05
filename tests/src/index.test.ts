@@ -2,7 +2,6 @@ import { getBrowser, Browser, getPage } from "./puppeteer";
 import { generate } from "randomstring";
 import { getMailClient } from "./mail";
 import { EMAIL_SENDER_ADDRESS } from "./config";
-const sheets = require("../../server/src/sheets");
 const app = require("../../server/src/app");
 const nodemailer = require("../../server/src/email");
 
@@ -13,7 +12,6 @@ describe("e2e", () => {
     const mailClient = getMailClient();
     await mailClient.connect();
     await nodemailer.connect();
-    await sheets.connect();
     await app.listen();
     browser = await getBrowser();
   });
