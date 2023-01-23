@@ -2,7 +2,6 @@ import { Section } from "./Section";
 // @ts-ignore
 import Avatar from "../../public/avatar.jpg";
 import { Socials } from "./Socials";
-import { SiteMap } from "./Sitemap";
 
 export function About() {
   return (
@@ -23,8 +22,9 @@ export function About() {
                 <a href="https://www.neo4j.com/">@neo4j</a>
               </p>
               <p>Speaker 🗣️ OSS 👨‍💻</p>
+
+              <a href="mailto:me@danielstarns.com">me@danielstarns.com</a>
             </div>
-            <SiteMap />
           </div>
           <img
             className="inline object-cover w-64 h-64 rounded-full"
