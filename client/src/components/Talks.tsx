@@ -1,9 +1,9 @@
 // @ts-ignore
 import GraphQLTalk from "../../public/graphql-talk.png";
 // @ts-ignore
-import JSMonthly1 from "../../public/js-monthly-talk1.png";
+import Microsoft from "../../public/microsoft-talk.jpeg";
 // @ts-ignore
-import JSMonthly2 from "../../public/js-monthly-talk2.png";
+import JSMonthly from "../../public/js-monthly-talk.png";
 import { Section } from "./Section";
 
 function YoutubeEmbed({ embedId }) {
@@ -32,12 +32,12 @@ export function Talks() {
         />
         <img
           className="ml-auto object-cover w-48 h-48 md:w-64 md:h-64 rounded-full"
-          src={JSMonthly1}
+          src={Microsoft}
           alt="JS Monthly"
         />
         <img
           className="object-cover w-48 h-48 md:w-64 md:h-64 rounded-full"
-          src={JSMonthly2}
+          src={JSMonthly}
           alt="JS Monthly"
         />
       </div>
