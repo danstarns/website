@@ -8,8 +8,6 @@ import RocketConnectIcon from "../../public/rocketconnect-icon.svg";
 import IMMJIcon from "../../public/immj-icon.png";
 // @ts-ignore
 import BeyondIcon from "../../public/beyondclicks-icon.png";
-// @ts-ignore
-import SilverhookIcon from "../../public/silverhook-icon.png";
 
 export interface Experience {
   title: string;
@@ -73,17 +71,6 @@ const experiences: Experience[] = [
       Building analytical PPC(Pay Per Click) dashboards and integrations. 
     `,
     image: BeyondIcon,
-  },
-  {
-    title: "Digital Marketing",
-    organization: {
-      name: "Silver Hook",
-      website: "https://silverhook.co.uk/",
-    },
-    description: `
-      Building, maintaining and publishing marketing content.
-    `,
-    image: SilverhookIcon,
   },
 ];
 
